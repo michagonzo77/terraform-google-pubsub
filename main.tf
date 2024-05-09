@@ -483,3 +483,9 @@ resource "google_pubsub_subscription_iam_member" "pull_subscription_sa_binding_v
     replace_triggered_by = [google_pubsub_subscription.pull_subscriptions]
   }
 }
+
+resource "google_pubsub_topic" "default" {
+  name    = "default-topic"
+  project = "default-project"
+}
+
