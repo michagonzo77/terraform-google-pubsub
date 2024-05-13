@@ -483,3 +483,10 @@ resource "google_pubsub_subscription_iam_member" "pull_subscription_sa_binding_v
     replace_triggered_by = [google_pubsub_subscription.pull_subscriptions]
   }
 }
+
+resource "google_pubsub_subscription_iam_member" "pull_subscription_sa_binding_viewer_dev-234" {
+  project      = "dev-234"
+  subscription = "example-subscription"
+  role         = "roles/pubsub.viewer"
+  member       = "serviceAccount:example-service-account@dev-234.iam.gserviceaccount.com"
+}
